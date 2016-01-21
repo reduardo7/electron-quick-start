@@ -41,6 +41,12 @@
   "dependencies": {
     "electron-packager": "^4.0.2",
     "electron-prebuilt": "^0.36.0",
-    "electron-builder": "^2.5.0"
-  }
+    "electron-builder": "^2.5.0",
+    "express": "~3.x"
+  },
+  "maintainers": [{
+    "name": "Eduardo Cuomo",
+    "email": "eduardo.cuomo.ar@gmail.com",
+    "web": "http://www.eduardocuomo.com.ar"
+  }]
 }

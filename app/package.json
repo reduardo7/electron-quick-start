@@ -22,7 +22,9 @@
     "url": "https://github.com/reduardo7/electron-quick-start/issues"
   },
   "homepage": "https://github.com/reduardo7/electron-quick-start#readme",
-  "devDependencies": {
-    "electron-prebuilt": "^0.36.0"
-  }
+  "maintainers": [{
+    "name": "Eduardo Cuomo",
+    "email": "eduardo.cuomo.ar@gmail.com",
+    "web": "http://www.eduardocuomo.com.ar"
+  }]
 }
