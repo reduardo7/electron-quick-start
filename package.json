@@ -4,11 +4,27 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron main.js"
+    "dev": "electron ./app",
+    "start": "npm run dev",
+
+    "clean:all": "rm -rf ./dist",
+    "clean:osx": "rm -rf ./dist/osx",
+    "clean:win": "rm -rf ./dist/win",
+    "clean": "npm run clean:win",
+
+    "pack:all": "npm run clean && npm run pack:osx && npm run pack:win",
+    "pack:osx": "npm run clean:osx && electron-packager ./app \"Loopline Systems\" --out=dist/osx --platform=darwin --arch=x64 --version=0.36.1 --icon=assets/icon.icns --ignore=\"node_modules/(electron-packager|electron-prebuilt)\"",
+    "pack:win": "npm run clean:win && electron-packager ./app \"Loopline Systems\" --out=dist/win --platform=win32 --arch=ia32 --version=0.36.1 --icon=assets/icon.ico --ignore=\"node_modules/(electron-packager|electron-prebuilt)\"",
+    "pack": "npm run pack:win",
+
+    "build:all": "npm run build:osx && npm run build:win",
+    "build:osx": "npm run pack:osx && electron-builder \"dist/osx/Loopline Systems.app\" --platform=osx --out=\"dist/osx\" --config=builder.json",
+    "build:win": "npm run pack:win && electron-builder \"dist/win/Loopline Systems-win32\" --platform=win --out=\"dist/win\" --config=builder.json",
+    "build": "npm run build:win"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atom/electron-quick-start.git"
+    "url": "git+https://github.com/reduardo7/electron-quick-start.git"
   },
   "keywords": [
     "Electron",
@@ -16,13 +32,15 @@
     "start",
     "tutorial"
   ],
-  "author": "GitHub",
+  "author": "Eduardo Cuomo",
   "license": "CC0-1.0",
   "bugs": {
-    "url": "https://github.com/atom/electron-quick-start/issues"
+    "url": "https://github.com/reduardo7/electron-quick-start/issues"
   },
-  "homepage": "https://github.com/atom/electron-quick-start#readme",
-  "devDependencies": {
-    "electron-prebuilt": "^0.36.0"
+  "homepage": "https://github.com/reduardo7/electron-quick-start#readme",
+  "dependencies": {
+    "electron-packager": "^4.0.2",
+    "electron-prebuilt": "^0.36.0",
+    "electron-builder": "^2.5.0"
   }
 }
