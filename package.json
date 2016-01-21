@@ -2,6 +2,27 @@
   "name": "electron-quick-start",
   "version": "1.0.0",
   "description": "A minimal Electron application",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reduardo7/electron-quick-start.git"
+  },
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial"
+  ],
+  "author": "Eduardo Cuomo",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/reduardo7/electron-quick-start/issues"
+  },
+  "homepage": "https://github.com/reduardo7/electron-quick-start#readme",
+  "maintainers": [{
+    "name": "Eduardo Cuomo",
+    "email": "eduardo.cuomo.ar@gmail.com",
+    "web": "http://www.eduardocuomo.com.ar"
+  }],
   "main": "main.js",
   "scripts": {
     "dev": "electron ./app",
@@ -22,31 +43,11 @@
     "build:win": "npm run pack:win && electron-builder \"dist/win/Loopline Systems-win32\" --platform=win --out=\"dist/win\" --config=builder.json",
     "build": "npm run build:win"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/reduardo7/electron-quick-start.git"
-  },
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial"
-  ],
-  "author": "Eduardo Cuomo",
-  "license": "CC0-1.0",
-  "bugs": {
-    "url": "https://github.com/reduardo7/electron-quick-start/issues"
-  },
-  "homepage": "https://github.com/reduardo7/electron-quick-start#readme",
   "dependencies": {
     "electron-packager": "^4.0.2",
     "electron-prebuilt": "^0.36.0",
     "electron-builder": "^2.5.0",
-    "express": "~3.x"
-  },
-  "maintainers": [{
-    "name": "Eduardo Cuomo",
-    "email": "eduardo.cuomo.ar@gmail.com",
-    "web": "http://www.eduardocuomo.com.ar"
-  }]
+    "express": "~3.x",
+    "sjsclass": "latest"
+  }
 }
