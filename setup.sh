@@ -1,5 +1,6 @@
 #!/bin/bash
-npm install -g npm
-npm install -g electron-packager
-npm install -g electron-builder
+sudo npm install -g npm
+sudo npm install -g electron-packager
+sudo npm install -g electron-builder
 npm install
+(cd app && npm install)

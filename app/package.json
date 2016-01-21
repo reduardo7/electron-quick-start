@@ -26,5 +26,9 @@
     "name": "Eduardo Cuomo",
     "email": "eduardo.cuomo.ar@gmail.com",
     "web": "http://www.eduardocuomo.com.ar"
-  }]
+  }],
+  "dependencies": {
+    "express": "~3.x",
+    "sjsclass": "latest"
+  }
 }
