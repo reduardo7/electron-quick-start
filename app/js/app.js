@@ -4,12 +4,11 @@ const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 
-module.exports = function ($cfg, $dir) {
-	// Keep a global reference of the window object, if you don't, the window will
-	// be closed automatically when the JavaScript object is garbage collected.
-	let mainWindow;
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the JavaScript object is garbage collected.
+let mainWindow;
 
-	//Class.extend('Class2', {});
+module.exports = function ($cfg, $db, $dir) {
 
 	function createWindow () {
 		// Create the browser window.

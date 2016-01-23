@@ -3,7 +3,8 @@
 const express = require('express');
 const appServer = express();
 
-module.exports = function ($cfg, $dir) {
+module.exports = function ($cfg, $db, $dir) {
+
 	// Configuración
 	appServer.configure(function () {
 		// Localización de los ficheros estáticos
@@ -19,17 +20,17 @@ module.exports = function ($cfg, $dir) {
 	// Rutas de nuestro API
 	// GET de todos los TODOs
 	appServer.get('/api/todos', function (req, res) {
-		/*Todo.find(function (err, todos) {
+		$db.find(function (err, todos) {
 			if (err) {
 				res.send(err);
 			}
 			res.json(todos);
-		});*/
+		});
 	});
 
 	// POST que crea un TODO y devuelve todos tras la creación
 	appServer.post('/api/todos', function (req, res) {
-		/*Todo.create({
+		$db.create({
 			text: req.body.text,
 			done: false
 		}, function (err, todo) {
@@ -37,31 +38,31 @@ module.exports = function ($cfg, $dir) {
 				res.send(err);
 			}
 
-			Todo.find(function (err, todos) {
+			$db.find(function (err, todos) {
 				if (err) {
 					res.send(err);
 				}
 				res.json(todos);
 			});
-		});*/
+		});
 	});
 
 	// DELETE un TODO específico y devuelve todos tras borrarlo.
 	appServer.delete('/api/todos/:todo', function (req, res) {
-		/*Todo.remove({
+		$db.remove({
 			_id: req.params.todo
 		}, function (err, todo) {
 			if (err) {
 				res.send(err);
 			}
 
-			Todo.find(function (err, todos) {
+			$db.find(function (err, todos) {
 				if (err) {
 					res.send(err);
 				}
 				res.json(todos);
 			});
-		})*/
+		});
 	});
 
 	// Carga una vista HTML simple donde irá nuestra Single AppServer Page
