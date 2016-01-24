@@ -20,7 +20,7 @@ module.exports = function ($cfg, $db, $dir) {
 	// Rutas de nuestro API
 	// GET de todos los TODOs
 	appServer.get('/api/todos', function (req, res) {
-		$db.find(function (err, todos) {
+		$db.find({}, function (err, todos) {
 			if (err) {
 				res.send(err);
 			}
@@ -30,7 +30,7 @@ module.exports = function ($cfg, $db, $dir) {
 
 	// POST que crea un TODO y devuelve todos tras la creación
 	appServer.post('/api/todos', function (req, res) {
-		$db.create({
+		$db.insert({
 			text: req.body.text,
 			done: false
 		}, function (err, todo) {
@@ -38,7 +38,7 @@ module.exports = function ($cfg, $db, $dir) {
 				res.send(err);
 			}
 
-			$db.find(function (err, todos) {
+			$db.find({}, function (err, todos) {
 				if (err) {
 					res.send(err);
 				}
@@ -51,12 +51,12 @@ module.exports = function ($cfg, $db, $dir) {
 	appServer.delete('/api/todos/:todo', function (req, res) {
 		$db.remove({
 			_id: req.params.todo
-		}, function (err, todo) {
+		}, {}, function (err, todo) {
 			if (err) {
 				res.send(err);
 			}
 
-			$db.find(function (err, todos) {
+			$db.find({}, function (err, todos) {
 				if (err) {
 					res.send(err);
 				}

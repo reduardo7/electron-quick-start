@@ -1,5 +1,6 @@
 'use strict';
 
+// https://github.com/louischatriot/nedb
 const Datastore = require('nedb');
 
 module.exports = function ($cfg, $dir) {
