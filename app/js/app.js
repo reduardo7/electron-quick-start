@@ -8,7 +8,7 @@ const BrowserWindow = electron.BrowserWindow;
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 
-module.exports = function ($cfg, $db, $dir) {
+module.exports = function ($cfg, $dir) {
 
 	function createWindow () {
 		// Create the browser window.

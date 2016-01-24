@@ -28,7 +28,7 @@
     "dev": "electron ./app",
     "start": "npm run dev",
 
-    "install:all": "(npm install && cd app && npm install)",
+    "install:all": "npm install && cd app && npm install",
 
     "clean:all": "rm -rf ./dist",
     "clean:osx": "rm -rf ./dist/osx",
